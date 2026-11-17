@@ -13,7 +13,12 @@ button{font:inherit;color:inherit;background:0;border:0;border-radius:8px;paddin
 button:hover{background:#8884}button.on{color:var(--ac)}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--ac)}
 .bd{background:var(--ac)!important;color:#000;font-weight:600}
 #top{display:flex;align-items:center;gap:8px;padding:calc(6px + env(safe-area-inset-top,0px)) 10px 6px;background:var(--bar);z-index:3;transition:opacity .3s}
-.lg{height:28px;width:18px;flex:none}#top b{font-size:16px}
+.hx{display:block;position:relative;height:28px;aspect-ratio:280/446;flex:none;filter:drop-shadow(0 0 1.5px #fffc)}
+.hx span{position:absolute;inset:0}.hx span:before,.hx span:after{content:"";position:absolute;inset:0}
+.hx .h{background:#000;clip-path:polygon(50.00% 1.53%,97.32% 18.70%,97.32% 52.14%,50.00% 69.78%,2.68% 52.14%,2.68% 18.70%)}.hx .h:before{background:#ff7f27;clip-path:polygon(50.00% 3.86%,94.11% 19.86%,94.11% 51.00%,50.00% 67.44%,5.89% 51.00%,5.89% 19.86%)}.hx .h:after{background:#ffc90e;clip-path:polygon(5.89% 51.00%,94.11% 19.86%,94.11% 51.00%,50.00% 67.44%)}
+.hx .s{inset:68.61% 48.39% 1.68% 48.39%;background:#000;border-radius:0 0 99px 99px}
+.hx .t{background:#808080;clip-path:polygon(35.89% 16.58%,78.78% 33.18%,35.89% 49.79%)}.hx .t:before{background:#c3c3c3;clip-path:polygon(39.11% 20.19%,72.65% 33.18%,39.11% 46.17%)}.hx .t:after{background:#fff;clip-path:polygon(39.11% 39.46%,64.29% 31.61%,72.65% 33.18%,39.11% 46.17%)}
+#top b{font-size:16px}
 #ttl{opacity:.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
 nav{display:flex;gap:2px}
 #stage{flex:1;min-height:0;position:relative;background:#000;display:grid;place-items:center;overflow:hidden;touch-action:manipulation;color:#fff}
@@ -92,13 +97,12 @@ pre{font:11px/1.7 ui-monospace,monospace;white-space:pre-wrap;opacity:.8}
 .g a{color:inherit;text-decoration:none;background:#8883;padding:5px 10px;border-radius:8px}.g a:hover{background:#8885}
 @media(max-width:640px){#top b,nav span,.hm{display:none}#drw,[dir=rtl] #drw{top:auto;left:0;right:auto;width:100%;height:72%;transform:translateY(105%);box-shadow:0 -6px 24px #0008}#tm{margin:0 4px}#big{width:64px;height:64px}}
 </style></head><body>
-<svg width="0" height="0" style="position:absolute"><symbol id="hx" viewBox="60 66 280 446"><defs><clipPath id="hc"><path d="M200 78 328 152V296L200 372 72 296V152Z"/></clipPath></defs><g clip-path="url(#hc)"><rect x="60" y="66" width="280" height="320" fill="#ff7f27"/><path d="M60 304 340 142V390H60Z" fill="#ffc90e"/></g><path d="M200 78 328 152V296L200 372 72 296V152ZM200 372V500" fill="none" stroke="#000" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/><path d="M165 148 272 214 165 280Z" fill="#c3c3c3"/><path d="M168 240 240 205 268 214 168 276Z" fill="#fff"/><path d="M165 148 272 214 165 280Z" fill="none" stroke="#808080" stroke-width="9" stroke-linejoin="round"/></symbol></svg>
 <div id="app" data-skin="honey">
-<header id="top"><svg class="lg"><use href="#hx"/></svg><b>HoneyPlay</b><span id="ttl"></span>
+<header id="top"><i class="hx"><span class="h"></span><span class="s"></span><span class="t"></span></i><b>HoneyPlay</b><span id="ttl"></span>
 <nav><button data-a="open"><i class="ic fo"></i><span data-t="open"></span></button><button data-a="url"><i class="ic lk"></i><span data-t="url"></span></button><button data-a="sub"><i class="ic cc"></i><span data-t="sub"></span></button><button data-a="dl"><i class="ic dl"></i><span data-t="dl"></span></button><button data-a="share"><i class="ic sh"></i><span data-t="share"></span></button></nav></header>
 <main id="stage"><video id="v" playsinline preload="metadata"></video><canvas id="cv" hidden></canvas>
-<div id="em"><svg class="lg" style="height:130px;width:82px"><use href="#hx"/></svg><h1>HoneyPlay</h1><p data-t="drop"></p><button class="bd" data-a="open"><i class="ic fo"></i><span data-t="open"></span></button></div>
-<div id="cov"><svg class="lg" style="height:110px;width:70px"><use href="#hx"/></svg><div class="eq"><u></u><u></u><u></u><u></u><u></u></div></div>
+<div id="em"><i class="hx" style="height:130px"><span class="h"></span><span class="s"></span><span class="t"></span></i><h1>HoneyPlay</h1><p data-t="drop"></p><button class="bd" data-a="open"><i class="ic fo"></i><span data-t="open"></span></button></div>
+<div id="cov"><i class="hx" style="height:110px"><span class="h"></span><span class="s"></span><span class="t"></span></i><div class="eq"><u></u><u></u><u></u><u></u><u></u></div></div>
 <button id="big" data-a="play"><i class="ic pp"></i></button><div id="osd"></div><div id="dz" data-t="drop"></div></main>
 <footer id="ctl"><div id="sk"><i id="tb"></i><i id="bf"></i><i id="pg"></i><input id="sb" type="range" min="0" max="1000" value="0"><span id="tip"></span></div>
 <div id="row"><button data-a="prev"><i class="ic pv"></i></button><button data-a="rew"><i class="ic rw"></i></button><button id="pp" data-a="play"><i id="ppi" class="ic pp"></i></button><button data-a="ff"><i class="ic ff"></i></button><button data-a="next"><i class="ic nx"></i></button><button class="hm" data-a="stop"><i class="ic st"></i></button>
@@ -217,7 +221,7 @@ const wk=()=>{A.classList.remove('idle');clearTimeout(it);it=setTimeout(()=>!v.p
 if('mediaSession'in navigator)[['play',()=>v.play()],['pause',()=>v.pause()],['previoustrack',()=>nx(-1)],['nexttrack',()=>nx(1)],['seekbackward',()=>jump(-skp)],['seekforward',()=>jump(skp)]].forEach(([a,h])=>{try{navigator.mediaSession.setActionHandler(a,h)}catch{}});
 [.25,.5,.75,1,1.25,1.5,2,2.5,3,4].forEach(x=>{const b=document.createElement('button');b.textContent=x+'×';b.dataset.s=x;b.onclick=()=>spd(x);$('chips').append(b)});
 $('ln').innerHTML=Object.entries(LN).map(([c,n])=>'<option value="'+c+'">'+n+'</option>').join('');
-$('fav').href='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 66 280 446">'+$('hx').innerHTML+'</svg>');
+$('fav').href='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 66 280 446"><path fill="#000" d="M200.0 72.8L332.5 149.4L332.5 298.6L200.0 377.2L67.5 298.6L67.5 149.4Z"/><path fill="#ff7f27" d="M200.0 83.2L323.5 154.6L323.5 293.4L200.0 366.8L76.5 293.4L76.5 154.6Z"/><path fill="#ffc90e" d="M76.5 293.4L323.5 154.6L323.5 293.4L200.0 366.8Z"/><rect x="195.5" y="360" width="9" height="144.5" rx="4.5"/><path fill="#808080" d="M160.5 139.9L280.6 214.0L160.5 288.1Z"/><path fill="#c3c3c3" d="M169.5 156.1L263.4 214.0L169.5 271.9Z"/><path fill="#fff" d="M169.5 242.0L240.0 207.0L263.4 214.0L169.5 271.9Z"/></svg>');
 const nl=navigator.language.slice(0,2);lang(S.l||(L[nl]?nl:'en'));
 A.dataset.skin=S.s||'honey';$('sn').value=A.dataset.skin;$('kp').value=skp;vol(S.v??100,1);spd(S.sp||1,1);flt();tf();rl();
 const h=new URLSearchParams(location.hash.slice(1));if(h.get('u')){tr=+h.get('t')||0;addU(h.get('u'))}
